@@ -21,7 +21,7 @@ client.on('interactionCreate', (interaction) => {
         interaction.reply(`Ping recebido! (｡•̀ᴗ-)✧`);
     }
 
-    if(interaction.commandNAme === 'soma'){
+    if(interaction.commandName === 'soma'){
         interaction.reply(`Placeholder`);
     }
 
