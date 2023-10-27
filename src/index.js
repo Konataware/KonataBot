@@ -12,16 +12,18 @@ const client = new Client({
 
 client.on('ready', (c) => {
     console.log(`✅ ${c.user.tag} está ativa e funcionando!`);
-})
+}); 
 
-client.on('messageCreate', (message) =>{
-    if (message.author.bot){
-        return;
+client.on('interactionCreate', (interaction) => {
+    if(!interaction.isChatInputCommand()) return;
+    
+    if(interaction.commandName === 'ping'){
+        interaction.reply(`Ping recebido! (｡•̀ᴗ-)✧`);
     }
-    let contentUpperCase = message.content.toUpperCase();
-    console.log(message.content);
-    if(contentUpperCase === 'PING'){
-        message.reply('Ping recebido! (｡•̀ᴗ-)✧')
+
+    if(interaction.commandNAme === 'soma'){
+        interaction.reply(`Placeholder`);
     }
-})
+
+});
 client.login(process.env.BOT_TOKEN);
